@@ -1,0 +1,24 @@
+-cp src
+-lib emmekit
+--each
+
+-neko bin/trimp_unit_test.n
+-main TrImpTest
+-debug
+-cmd nekotools boot bin/trimp_unit_test.n
+
+--next
+-neko bin/trimp_debug.n
+-main TrImp
+-debug
+-cmd nekotools boot bin/trimp_debug.n
+
+--next
+-neko bin/trimp.n
+-main TrImp
+--no-traces
+-cmd nekotools boot bin/trimp.n
+
+--next
+-cmd neko bin/trimp_unit_test.n
+
